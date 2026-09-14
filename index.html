@@ -1,0 +1,106 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explorador de Países</title>
+
+    <meta name="description"
+        content="Explorador de países con información básica y opciones de búsqueda y filtrado.">
+
+    <meta property="og:title" content="Explorador de Países">
+    <meta property="og:description"
+        content="Explora información básica de diferentes países.">
+    <meta property="og:type" content="website">
+    <meta property="og:image"
+        content="https://flags.restcountries.com/v5/w640/co.png">
+</head>
+
+<body>
+
+    <header>
+        <h1>Explorador de Países</h1>
+        <p>Explora información básica de países de todo el mundo.</p>
+    </header>
+
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Favoritos</a>
+        <a href="#">Acerca de</a>
+    </nav>
+
+    <main>
+
+        <section>
+            <h2>Buscar países</h2>
+
+            <form>
+                <p>
+                    <label for="busqueda">Buscar país:</label>
+                    <input
+                        type="text"
+                        id="busqueda"
+                        name="busqueda">
+                </p>
+
+                <p>
+                    <label for="filtro">Filtrar por:</label>
+                    <select id="filtro" name="filtro">
+                        <option value="nombre">Nombre</option>
+                        <option value="region">Región</option>
+                        <option value="capital">Capital</option>
+                    </select>
+                </p>
+
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Resultados</h2>
+
+            <article>
+                <img
+                    src="https://flags.restcountries.com/v5/w320/co.png"
+                    alt="Bandera de Colombia">
+                <h3>Colombia</h3>
+                <p>Su capital es Bogotá y se encuentra en América del Sur.</p>
+            </article>
+
+            <article>
+                <img
+                    src="https://flags.restcountries.com/v5/w320/br.png"
+                    alt="Bandera de Brasil">
+                <h3>Brasil</h3>
+                <p>Su capital es Brasilia y es el país más grande de América del Sur.</p>
+            </article>
+
+            <article>
+                <img
+                    src="https://flags.restcountries.com/v5/w320/jp.png"
+                    alt="Bandera de Japón">
+                <h3>Japón</h3>
+                <p>Su capital es Tokio y se encuentra en Asia.</p>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Andres Estiven Henao Morales</p>
+        <p>Tecnología en Sistemas</p>
+        <p>
+            <a href="https://restcountries.com/docs/countries">
+                Documentación de REST Countries
+            </a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
+```
