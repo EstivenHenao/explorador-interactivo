@@ -1,0 +1,186 @@
+```css
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primario: #22c55e;
+    --secundario: #16a34a;
+    --texto: #1e293b;
+    --fondo: #f1f5f9;
+    --blanco: #ffffff;
+    --borde: #cbd5e1;
+}
+
+body {
+    margin: 0;
+    color: var(--texto);
+    background: var(--fondo);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: var(--primario);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+nav {
+    background: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+    padding: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav a {
+    color: var(--texto);
+    text-decoration: none;
+    padding: 8px 12px;
+}
+
+nav a:hover {
+    background: var(--primario);
+    color: white;
+    border-radius: 6px;
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.tarjeta {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid var(--primario);
+}
+
+button {
+    background: var(--primario);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background: var(--secundario);
+}
+
+.resultados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.personaje {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.personaje img {
+    width: 100%;
+    display: block;
+}
+
+.personaje div {
+    padding: 15px;
+}
+
+.personaje h3 {
+    margin-top: 0;
+    color: var(--secundario);
+}
+
+.personaje p {
+    margin: 5px 0;
+}
+
+footer {
+    background: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: var(--primario);
+}
+
+@media (max-width: 700px) {
+    .resultados {
+        grid-template-columns: 1fr;
+    }
+
+    nav li {
+        display: block;
+        margin: 8px;
+    }
+}
+```

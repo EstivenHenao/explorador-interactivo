@@ -1,106 +1,108 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Explorador de Países</title>
+    <title>Explorador de Rick and Morty</title>
 
-    <meta name="description"
-        content="Explorador de países con información básica y opciones de búsqueda y filtrado.">
+    <meta name="description" content="Explorador interactivo de personajes de Rick and Morty usando su API.">
 
-    <meta property="og:title" content="Explorador de Países">
-    <meta property="og:description"
-        content="Explora información básica de diferentes países.">
+    <meta property="og:title" content="Explorador de Rick and Morty">
+    <meta property="og:description" content="Explora personajes del universo de Rick and Morty.">
     <meta property="og:type" content="website">
-    <meta property="og:image"
-        content="https://flags.restcountries.com/v5/w640/co.png">
+    <meta property="og:image" content="https://rickandmortyapi.com/api/character/avatar/1.jpeg">
+
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Explorador de Países</h1>
-        <p>Explora información básica de países de todo el mundo.</p>
+        <h1>Explorador de Rick and Morty</h1>
+        <p>Explora personajes del universo de Rick and Morty</p>
     </header>
 
     <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Favoritos</a>
-        <a href="#">Acerca de</a>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Favoritos</a></li>
+            <li><a href="#">Acerca de</a></li>
+        </ul>
     </nav>
 
     <main>
 
-        <section>
-            <h2>Buscar países</h2>
+        <section class="tarjeta">
+            <h2>Buscar personajes</h2>
 
             <form>
-                <p>
-                    <label for="busqueda">Buscar país:</label>
+                <div class="campo">
+                    <label for="busqueda">Nombre del personaje:</label>
                     <input
                         type="text"
                         id="busqueda"
-                        name="busqueda">
-                </p>
+                        name="busqueda"
+                        placeholder="Ejemplo: Rick">
+                </div>
 
-                <p>
+                <div class="campo">
                     <label for="filtro">Filtrar por:</label>
                     <select id="filtro" name="filtro">
                         <option value="nombre">Nombre</option>
-                        <option value="region">Región</option>
-                        <option value="capital">Capital</option>
+                        <option value="estado">Estado</option>
+                        <option value="especie">Especie</option>
+                        <option value="genero">Género</option>
                     </select>
-                </p>
+                </div>
 
                 <button type="submit">Buscar</button>
             </form>
         </section>
 
         <section>
-            <h2>Resultados</h2>
+            <h2>Personajes</h2>
 
-            <article>
-                <img
-                    src="https://flags.restcountries.com/v5/w320/co.png"
-                    alt="Bandera de Colombia">
-                <h3>Colombia</h3>
-                <p>Su capital es Bogotá y se encuentra en América del Sur.</p>
-            </article>
+            <div class="resultados">
 
-            <article>
-                <img
-                    src="https://flags.restcountries.com/v5/w320/br.png"
-                    alt="Bandera de Brasil">
-                <h3>Brasil</h3>
-                <p>Su capital es Brasilia y es el país más grande de América del Sur.</p>
-            </article>
+                <article class="personaje">
+                    <img
+                        src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+                        alt="Rick Sanchez">
 
-            <article>
-                <img
-                    src="https://flags.restcountries.com/v5/w320/jp.png"
-                    alt="Bandera de Japón">
-                <h3>Japón</h3>
-                <p>Su capital es Tokio y se encuentra en Asia.</p>
-            </article>
+                    <div>
+                        <h3>Rick Sanchez</h3>
 
-        </section>
+                        <p><strong>Estado:</strong> Vivo</p>
+                        <p><strong>Especie:</strong> Humano</p>
+                        <p><strong>Género:</strong> Masculino</p>
+                        <p><strong>Ubicación:</strong> Tierra</p>
+                    </div>
+                </article>
 
-    </main>
+                <article class="personaje">
+                    <img
+                        src="https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+                        alt="Morty Smith">
 
-    <footer>
-        <p>Andres Estiven Henao Morales</p>
-        <p>Tecnología en Sistemas</p>
-        <p>
-            <a href="https://restcountries.com/docs/countries">
-                Documentación de REST Countries
-            </a>
-        </p>
-    </footer>
+                    <div>
+                        <h3>Morty Smith</h3>
 
-</body>
+                        <p><strong>Estado:</strong> Vivo</p>
+                        <p><strong>Especie:</strong> Humano</p>
+                        <p><strong>Género:</strong> Masculino</p>
+                        <p><strong>Ubicación:</strong> Tierra</p>
+                    </div>
+                </article>
 
-</html>
-```
+                <article class="personaje">
+                    <img
+                        src="https://rickandmortyapi.com/api/character/avatar/3.jpeg"
+                        alt="Summer Smith">
+
+                    <div>
+                        <h3>Summer Smith</h3>
+
+                        <p><strong>Estado:</strong> Vivo</p>
+                        <p><strong>Especie:</strong
+
