@@ -1,186 +1,240 @@
-```css
 * {
-    box-sizing: border-box;
-}
-
-:root {
-    --primario: #22c55e;
-    --secundario: #16a34a;
-    --texto: #1e293b;
-    --fondo: #f1f5f9;
-    --blanco: #ffffff;
-    --borde: #cbd5e1;
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
 
 body {
-    margin: 0;
-    color: var(--texto);
-    background: var(--fondo);
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+color: #222;
+min-height: 100vh;
 }
 
-header {
-    background: var(--primario);
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
+.pagina {
+display: grid;
+grid-template-columns: 250px 1fr;
+grid-template-rows: auto 1fr auto;
+grid-template-areas:
+"cabecera cabecera"
+"lateral contenido"
+"pie pie";
+min-height: 100vh;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.2rem;
+.cabecera {
+grid-area: cabecera;
+display: flex;
+align-items: center;
+gap: 30px;
+padding: 20px 35px;
+background-color: #20232a;
+color: white;
 }
 
-header p {
-    margin-bottom: 0;
+.logo {
+color: white;
+text-decoration: none;
+font-size: 24px;
+font-weight: bold;
+white-space: nowrap;
 }
 
-nav {
-    background: var(--blanco);
-    border-bottom: 1px solid var(--borde);
-    padding: 15px;
+.buscador-contenedor {
+flex: 1;
+max-width: 600px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
+.buscador {
+width: 100%;
+padding: 12px 16px;
+border: none;
+border-radius: 8px;
+font-size: 16px;
 }
 
-nav li {
-    display: inline-block;
-    margin: 0 10px;
+.buscador:focus {
+outline: 3px solid #61dafb;
 }
 
-nav a {
-    color: var(--texto);
-    text-decoration: none;
-    padding: 8px 12px;
+.menu {
+display: flex;
+align-items: center;
+gap: 25px;
+list-style: none;
 }
 
-nav a:hover {
-    background: var(--primario);
-    color: white;
-    border-radius: 6px;
+.menu a {
+color: white;
+text-decoration: none;
+font-size: 16px;
 }
 
-main {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 20px;
+.menu a:hover {
+text-decoration: underline;
 }
 
-h2 {
-    text-align: center;
+.filtros {
+grid-area: lateral;
+padding: 30px 20px;
+background-color: white;
+border-right: 1px solid #ddd;
 }
 
-.tarjeta {
-    background: var(--blanco);
-    border: 1px solid var(--borde);
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 30px;
+.filtros h2 {
+margin-bottom: 25px;
+font-size: 24px;
 }
 
-.campo {
-    margin-bottom: 15px;
+.filtros fieldset {
+border: 1px solid #ddd;
+border-radius: 8px;
+padding: 15px;
+margin-bottom: 20px;
+display: flex;
+flex-direction: column;
+gap: 12px;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+.filtros legend {
+padding: 0 5px;
+font-weight: bold;
 }
 
-input,
-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--borde);
-    border-radius: 6px;
-    font-size: 1rem;
+.filtros label {
+display: flex;
+align-items: center;
+gap: 8px;
+cursor: pointer;
 }
 
-input:focus,
-select:focus {
-    outline: 2px solid var(--primario);
-}
-
-button {
-    background: var(--primario);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-button:hover {
-    background: var(--secundario);
+.filtros input {
+cursor: pointer;
 }
 
 .resultados {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+grid-area: contenido;
+padding: 35px;
+min-width: 0;
 }
 
-.personaje {
-    background: var(--blanco);
-    border: 1px solid var(--borde);
-    border-radius: 12px;
-    overflow: hidden;
+.titulo-resultados {
+margin-bottom: 30px;
 }
 
-.personaje img {
-    width: 100%;
-    display: block;
+.titulo-resultados h1 {
+font-size: 32px;
+margin-bottom: 8px;
 }
 
-.personaje div {
-    padding: 15px;
+.titulo-resultados p {
+color: #666;
+font-size: 17px;
 }
 
-.personaje h3 {
-    margin-top: 0;
-    color: var(--secundario);
+.grilla-personajes {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 25px;
 }
 
-.personaje p {
-    margin: 5px 0;
+.tarjeta {
+display: flex;
+flex-direction: column;
+background-color: white;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
 }
 
-footer {
-    background: #1e293b;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
+.tarjeta img {
+width: 100%;
+height: 220px;
+object-fit: cover;
 }
 
-footer p {
-    margin: 5px;
+.contenido-tarjeta {
+display: flex;
+flex-direction: column;
+gap: 9px;
+padding: 20px;
+flex: 1;
+min-width: 0;
 }
 
-footer a {
-    color: white;
+.contenido-tarjeta h2 {
+font-size: 20px;
+overflow-wrap: break-word;
 }
 
-footer a:hover {
-    color: var(--primario);
+.contenido-tarjeta p {
+color: #555;
+font-size: 15px;
 }
 
-@media (max-width: 700px) {
-    .resultados {
-        grid-template-columns: 1fr;
-    }
-
-    nav li {
-        display: block;
-        margin: 8px;
-    }
+.estado {
+font-weight: bold;
 }
-```
+
+.boton {
+display: block;
+margin-top: auto;
+padding: 10px 15px;
+background-color: #20232a;
+color: white;
+text-align: center;
+text-decoration: none;
+border-radius: 6px;
+}
+
+.boton:hover {
+background-color: #444;
+}
+
+.boton:focus {
+outline: 3px solid #61dafb;
+outline-offset: 2px;
+}
+
+.pie {
+grid-area: pie;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 30px;
+padding: 35px 40px;
+background-color: #20232a;
+color: white;
+}
+
+.pie h3 {
+margin-bottom: 10px;
+}
+
+.pie p {
+color: #ddd;
+line-height: 1.5;
+}
+
+.pie a {
+display: block;
+margin-bottom: 7px;
+color: #ddd;
+text-decoration: none;
+}
+
+.pie a:hover {
+color: white;
+text-decoration: underline;
+}
+
+.oculto {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+white-space: nowrap;
+border: 0;
+}

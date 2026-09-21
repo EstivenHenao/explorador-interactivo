@@ -1,108 +1,370 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Explorador de Rick and Morty</title>
-
-    <meta name="description" content="Explorador interactivo de personajes de Rick and Morty usando su API.">
-
-    <meta property="og:title" content="Explorador de Rick and Morty">
-    <meta property="og:description" content="Explora personajes del universo de Rick and Morty.">
+    <meta name="description" content="Explorador Interactivo de personajes de Rick and Morty">
+    <meta property="og:title" content="Explorador Interactivo">
+    <meta property="og:description" content="Explora personajes de Rick and Morty">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://rickandmortyapi.com/api/character/avatar/1.jpeg">
-
+    <title>Explorador Interactivo | Rick and Morty</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
-<body>
+<body class="pagina">
 
-    <header>
-        <h1>Explorador de Rick and Morty</h1>
-        <p>Explora personajes del universo de Rick and Morty</p>
-    </header>
+```
+<header class="cabecera">
+
+    <a href="#" class="logo">
+        Explorador Interactivo
+    </a>
+
+    <div class="buscador-contenedor">
+        <label for="buscador" class="oculto">
+            Buscar personaje
+        </label>
+
+        <input
+            class="buscador"
+            id="buscador"
+            type="search"
+            placeholder="Buscar personaje..."
+            aria-label="Buscar personaje"
+        >
+    </div>
 
     <nav>
-        <ul>
+        <ul class="menu">
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Favoritos</a></li>
             <li><a href="#">Acerca de</a></li>
         </ul>
     </nav>
 
-    <main>
+</header>
 
-        <section class="tarjeta">
-            <h2>Buscar personajes</h2>
+<aside class="filtros">
 
-            <form>
-                <div class="campo">
-                    <label for="busqueda">Nombre del personaje:</label>
-                    <input
-                        type="text"
-                        id="busqueda"
-                        name="busqueda"
-                        placeholder="Ejemplo: Rick">
-                </div>
+    <h2>Filtros</h2>
 
-                <div class="campo">
-                    <label for="filtro">Filtrar por:</label>
-                    <select id="filtro" name="filtro">
-                        <option value="nombre">Nombre</option>
-                        <option value="estado">Estado</option>
-                        <option value="especie">Especie</option>
-                        <option value="genero">Género</option>
-                    </select>
-                </div>
+    <fieldset>
 
-                <button type="submit">Buscar</button>
-            </form>
-        </section>
+        <legend>Estado</legend>
 
-        <section>
-            <h2>Personajes</h2>
+        <label>
+            <input type="checkbox" name="estado" value="alive">
+            Vivo
+        </label>
 
-            <div class="resultados">
+        <label>
+            <input type="checkbox" name="estado" value="dead">
+            Muerto
+        </label>
 
-                <article class="personaje">
-                    <img
-                        src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-                        alt="Rick Sanchez">
+        <label>
+            <input type="checkbox" name="estado" value="unknown">
+            Desconocido
+        </label>
 
-                    <div>
-                        <h3>Rick Sanchez</h3>
+    </fieldset>
 
-                        <p><strong>Estado:</strong> Vivo</p>
-                        <p><strong>Especie:</strong> Humano</p>
-                        <p><strong>Género:</strong> Masculino</p>
-                        <p><strong>Ubicación:</strong> Tierra</p>
-                    </div>
-                </article>
+    <fieldset>
 
-                <article class="personaje">
-                    <img
-                        src="https://rickandmortyapi.com/api/character/avatar/2.jpeg"
-                        alt="Morty Smith">
+        <legend>Especie</legend>
 
-                    <div>
-                        <h3>Morty Smith</h3>
+        <label>
+            <input type="checkbox" name="especie" value="human">
+            Humano
+        </label>
 
-                        <p><strong>Estado:</strong> Vivo</p>
-                        <p><strong>Especie:</strong> Humano</p>
-                        <p><strong>Género:</strong> Masculino</p>
-                        <p><strong>Ubicación:</strong> Tierra</p>
-                    </div>
-                </article>
+        <label>
+            <input type="checkbox" name="especie" value="alien">
+            Alienígena
+        </label>
 
-                <article class="personaje">
-                    <img
-                        src="https://rickandmortyapi.com/api/character/avatar/3.jpeg"
-                        alt="Summer Smith">
+        <label>
+            <input type="checkbox" name="especie" value="humanoid">
+            Humanoide
+        </label>
 
-                    <div>
-                        <h3>Summer Smith</h3>
+    </fieldset>
 
-                        <p><strong>Estado:</strong> Vivo</p>
-                        <p><strong>Especie:</strong
+    <fieldset>
 
+        <legend>Ordenar por</legend>
+
+        <label>
+            <input type="radio" name="orden" value="nombre" checked>
+            Nombre
+        </label>
+
+        <label>
+            <input type="radio" name="orden" value="especie">
+            Especie
+        </label>
+
+    </fieldset>
+
+</aside>
+
+<main class="resultados">
+
+    <div class="titulo-resultados">
+        <h1>Personajes</h1>
+
+        <p>
+            Explora personajes del universo de Rick and Morty.
+        </p>
+    </div>
+
+    <section class="grilla-personajes">
+
+        <article class="tarjeta">
+
+            <img
+                src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+                alt="Rick Sanchez"
+            >
+
+            <div class="contenido-tarjeta">
+
+                <h2>Rick Sanchez</h2>
+
+                <p>Especie: Humano</p>
+
+                <p class="estado">Estado: Vivo</p>
+
+                <a
+                    href="https://rickandmortyapi.com/api/character/1"
+                    target="_blank"
+                    class="boton"
+                >
+                    Ver detalle
+                </a>
+
+            </div>
+
+        </article>
+
+        <article class="tarjeta">
+
+            <img
+                src="https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+                alt="Morty Smith"
+            >
+
+            <div class="contenido-tarjeta">
+
+                <h2>Morty Smith</h2>
+
+                <p>Especie: Humano</p>
+
+                <p class="estado">Estado: Vivo</p>
+
+                <a
+                    href="https://rickandmortyapi.com/api/character/2"
+                    target="_blank"
+                    class="boton"
+                >
+                    Ver detalle
+                </a>
+
+            </div>
+
+        </article>
+
+        <article class="tarjeta">
+
+            <img
+                src="https://rickandmortyapi.com/api/character/avatar/3.jpeg"
+                alt="Summer Smith"
+            >
+
+            <div class="contenido-tarjeta">
+
+                <h2>Summer Smith</h2>
+
+                <p>Especie: Humano</p>
+
+                <p class="estado">Estado: Vivo</p>
+
+                <a
+                    href="https://rickandmortyapi.com/api/character/3"
+                    target="_blank"
+                    class="boton"
+                >
+                    Ver detalle
+                </a>
+
+            </div>
+
+        </article>
+
+        <article class="tarjeta">
+
+            <img
+                src="https://rickandmortyapi.com/api/character/avatar/4.jpeg"
+                alt="Beth Smith"
+            >
+
+            <div class="contenido-tarjeta">
+
+                <h2>Beth Smith</h2>
+
+                <p>Especie: Humano</p>
+
+                <p class="estado">Estado: Vivo</p>
+
+                <a
+                    href="https://rickandmortyapi.com/api/character/4"
+                    target="_blank"
+                    class="boton"
+                >
+                    Ver detalle
+                </a>
+
+            </div>
+
+        </article>
+
+        <article class="tarjeta">
+
+            <img
+                src="https://rickandmortyapi.com/api/character/avatar/5.jpeg"
+                alt="Jerry Smith"
+            >
+
+            <div class="contenido-tarjeta">
+
+                <h2>Jerry Smith</h2>
+
+                <p>Especie: Humano</p>
+
+                <p class="estado">Estado: Vivo</p>
+
+                <a
+                    href="https://rickandmortyapi.com/api/character/5"
+                    target="_blank"
+                    class="boton"
+                >
+                    Ver detalle
+                </a>
+
+            </div>
+
+        </article>
+
+        <article class="tarjeta">
+
+            <img
+                src="https://rickandmortyapi.com/api/character/avatar/6.jpeg"
+                alt="Abadango Cluster Princess"
+            >
+
+            <div class="contenido-tarjeta">
+
+                <h2>Abadango Cluster Princess</h2>
+
+                <p>Especie: Alienígena</p>
+
+                <p class="estado">Estado: Desconocido</p>
+
+                <a
+                    href="https://rickandmortyapi.com/api/character/6"
+                    target="_blank"
+                    class="boton"
+                >
+                    Ver detalle
+                </a>
+
+            </div>
+
+        </article>
+
+        <article class="tarjeta">
+
+            <img
+                src="https://rickandmortyapi.com/api/character/avatar/7.jpeg"
+                alt="Abradolf Lincler"
+            >
+
+            <div class="contenido-tarjeta">
+
+                <h2>Abradolf Lincler</h2>
+
+                <p>Especie: Humanoide</p>
+
+                <p class="estado">Estado: Desconocido</p>
+
+                <a
+                    href="https://rickandmortyapi.com/api/character/7"
+                    target="_blank"
+                    class="boton"
+                >
+                    Ver detalle
+                </a>
+
+            </div>
+
+        </article>
+
+        <article class="tarjeta">
+
+            <img
+                src="https://rickandmortyapi.com/api/character/avatar/8.jpeg"
+                alt="Adjudicator Rick"
+            >
+
+            <div class="contenido-tarjeta">
+
+                <h2>Adjudicator Rick</h2>
+
+                <p>Especie: Humano</p>
+
+                <p class="estado">Estado: Muerto</p>
+
+                <a
+                    href="https://rickandmortyapi.com/api/character/8"
+                    target="_blank"
+                    class="boton"
+                >
+                    Ver detalle
+                </a>
+
+            </div>
+
+        </article>
+
+    </section>
+
+</main>
+
+<footer class="pie">
+
+    <div>
+        <h3>Explorador Interactivo</h3>
+        <p>Proyecto de Programación para Entornos Web 1.</p>
+    </div>
+
+    <div>
+        <h3>API</h3>
+        <a href="https://rickandmortyapi.com/" target="_blank">
+            Rick and Morty API
+        </a>
+    </div>
+
+    <div>
+        <h3>Curso</h3>
+        <a href="#">Universidad de Caldas</a>
+        <a href="#">Programación para Entornos Web 1</a>
+    </div>
+
+</footer>
+```
+
+</body>
+
+</html>
