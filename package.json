@@ -1,0 +1,14 @@
+{
+  "name": "explorador-interactivo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Explorador de personajes de Rick and Morty",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/entrada.css -o ./css/tailwind.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/entrada.css -o ./css/tailwind.css"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}
