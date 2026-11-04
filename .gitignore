@@ -1,1 +1,3 @@
-node_modules/\n.DS_Store\nThumbs.db\n
+node_modules/
+.DS_Store
+Thumbs.db
